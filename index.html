@@ -28,26 +28,23 @@
 
     <div class="tela" >
         <div class="login" style="height: 90vh;">
-            <p>HORÁRIO</p>
-            <div id="horario" class="ipt">
-                <p class="hora" id="time">--:--</p>
+            <div>
+                <p>HORÁRIO</p>
+                <div id="horario" class="ipt">
+                    <p class="hora" id="time">--:--</p>
+                </div>
+                <p>PONTO</p>
+                <div id="ponto" class="ipt" onclick="popupPonto()">
+                    <span  class="hora">
+                        <p id="pontoCx">DEFINA O PONTO</p><p id="ruaaa"></p>
+                    </span>
+                </div>
+                <p>PERÍODO</p>
+                <div id="periodo" class="ipt" onclick="popuPeriodo()">
+                    <p id="periodoCx" class="hora">DEFINA O PERIODO</p>
+                </div>
             </div>
-            <p>PONTO</p>
-            <div id="ponto" class="ipt" onclick="popupPonto()">
-                <span  class="hora">
-                    <p id="pontoCx">DEFINA O PONTO</p><p id="ruaaa"></p>
-                </span>
-            </div>
-            <p>PERÍODO</p>
-            <div id="periodo" class="ipt" onclick="popuPeriodo()">
-                <p id="periodoCx" class="hora">0:00</p>
-            </div>
-
-            <div id="check"><p id="simb">!</p><p style="font-size: 2em; font-weight: 600;" id="avisooo">CHECAR</p></div>
-
-            <div id="rodape"><button id="aviso" onclick="aviso()">ENVIAR AVISO</button></div>
-
-            <p id="sair" onclick="sair()">SAIR</p>
+            <div id="check"><p id="avisooo" onclick="proxPonto()">PRÓXIMO PONTO</p></div>
         </div>
     </div>
 
