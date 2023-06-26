@@ -44,17 +44,26 @@
                     <p id="periodoCx" class="hora">DEFINA O PERIODO</p>
                 </div>
             </div>
-            <div id="check"><p id="avisooo" onclick="proxPonto()">PRÓXIMO PONTO</p></div>
+            <div id="check"  onclick="proxPonto()"><p id="avisooo">PRÓXIMO PONTO</p></div>
         </div>
     </div>
 
     <script>
         var ponto = 0;
-        var periodo = "periodo";        
+        var periodo = 0;        
         var toque = 0;
 
-        function sair(){
-            location.href = "index.html";        
+        function proxPonto(){
+            if(periodo == 0){
+                popuPeriodo();
+                return;
+            }
+            if(ponto!=6){
+                ponto+=1;
+                setPontoPrx();
+            } else {
+                ponto = 0;
+            }    
         }
 
         function popupPonto() {
@@ -67,74 +76,61 @@
             periodoTab.style.display = 'block';
         }
 
+        function setPontoPrx() {
+            switch(ponto){
+                case 1:
+                    document.getElementById('pontoCx').textContent = 'PONTO 1';
+                    document.getElementById('ruaaa').textContent = 'Rua das Flores, 52';
+                    altHora();
+                break; 
 
+                case 2:
+                    document.getElementById('pontoCx').textContent = 'PONTO 2';
+                    document.getElementById('ruaaa').textContent = 'Rua Olímpia, 246';
+                    altHora();
+                break;
+
+                case 3:
+                    document.getElementById('pontoCx').textContent = 'PONTO 3';
+                    document.getElementById('ruaaa').textContent = 'Av. Cravo,71';
+                    altHora();
+                break;
+
+                case 4:
+                    document.getElementById('pontoCx').textContent = 'PONTO 4';
+                    document.getElementById('ruaaa').textContent = 'Groove Street, 99';
+                    altHora();
+                break; 
+
+                case 5:
+                    document.getElementById('pontoCx').textContent = 'PONTO 5';
+                    document.getElementById('ruaaa').textContent = 'Av. XV de Novembro, 377';
+                    altHora();
+                break; 
+
+                case 6:
+                    document.getElementById('pontoCx').textContent = 'PONTO 6';
+                    document.getElementById('ruaaa').textContent = 'Rua Calipso, 12';
+                    altHora();
+                break; 
+            }
+        }
 
         function setPonto(esc, pt, rua) {
             ponto = esc;
+            const pontoTab = document.getElementById('pontoTab');
             pontoTab.style.display = 'none';
             document.getElementById('pontoCx').textContent = pt;
             document.getElementById('ruaaa').textContent = rua;
-            checarRota();
             altHora();
         }
 
         function setPeriodo(esc, per) {
             periodo = esc;
+            const periodoTab = document.getElementById('periodoTab');
             periodoTab.style.display = 'none';
             document.getElementById('periodoCx').textContent = per;
-            checarRota();
             altHora();
-        }
-
-        function checarRota(){
-            var checar = document.getElementById('check');
-            if(ponto != 0 && periodo != 0){
-                switch(periodo){
-                    case 1:
-                        if(ponto<4){
-                            checar.style.backgroundColor = 'var(--rox2)';
-                            checar.style.color = 'var(--cin)';
-                            document.getElementById('simb').textContent = 'X';
-                            document.getElementById('avisooo').textContent = 'INDISPONÍVEL';
-                        } else {
-                            checar.style.backgroundColor = 'var(--cin)';
-                            checar.style.color = 'var(--rox)';
-                            document.getElementById('simb').textContent = '✔';
-                            document.getElementById('avisooo').textContent = 'DISPONÍVEL';
-                        }
-                    break;
-
-                    case 2:
-                        if(ponto<2){
-                            checar.style.backgroundColor = 'var(--rox2)';
-                            checar.style.color = 'var(--cin)';
-                            document.getElementById('simb').textContent = 'X';
-                            document.getElementById('avisooo').textContent = 'INDISPONÍVEL';
-                        } else {
-                            checar.style.backgroundColor = 'var(--cin)';
-                            checar.style.color = 'var(--rox)';
-                            document.getElementById('simb').textContent = '✔';
-                            document.getElementById('avisooo').textContent = 'DISPONÍVEL';
-                        }
-                    break;
-
-                    case 3:
-                        if(ponto<3){
-                            checar.style.backgroundColor = 'var(--rox2)';
-                            checar.style.color = 'var(--cin)';
-                            document.getElementById('simb').textContent = 'X';
-                            document.getElementById('avisooo').textContent = 'INDISPONÍVEL';
-                        } else {
-                            checar.style.backgroundColor = 'var(--cin)';
-                            checar.style.color = 'var(--rox)';
-                            document.getElementById('simb').textContent = '✔';
-                            document.getElementById('avisooo').textContent = 'DISPONÍVEL';
-                        }
-                    break;
-                }
-            } else {
-                return;
-            }
         }
 
         function altHora(){
@@ -215,20 +211,6 @@
             }
         }
     
-        function aviso(){
-            var aviso = document.getElementById('aviso');
-            if(toque == 0){
-                toque = 1;
-                aviso.textContent = 'ENVIADO';
-                aviso.style.backgroundColor = 'var(--cin)';
-                aviso.style.color = 'var(--rox2)';                
-            } else if(toque == 1){
-                toque= 0;
-                aviso.textContent = 'ACEITO';
-                aviso.style.backgroundColor = 'var(--rox2)';
-                aviso.style.color = 'var(--amr)';  
-            }
-        }
     </script>
 </body>
 </html>
