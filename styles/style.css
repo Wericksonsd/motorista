@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;800&display=swap');
+
+:root{
+    font-family: 'Montserrat', sans-serif;
+    --bra: rgb(230, 230, 230);
+    --cin: rgb(202, 202, 202);
+    --amr:rgb(240, 210, 0);
+    --rox: rgb(65, 20, 80);
+    --rox2: rgb(95, 35, 110);
+}
+
+*{
+    font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+.tela{
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(198,198,198,1) 56%);
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/2668544-fundo-laranja-corporativo-ondulado-vetor.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rox2);
+    font-size: 3em;
+    font-weight: 600;
+}
+
+#buzz{
+    font-weight: 900;
+    font-style: italic;
+}
+
+.login{
+    background-color: var(--rox);
+    color: var(--bra);
+    width: 90vw;
+    height: 70vh;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.login>h3{
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ipt{
+    color: var(--rox2);
+    background-color: var(--cin);
+    border-radius: 5px;
+    border: 0cm;
+    min-height: 50px;
+    padding-left: 15px;
+    width: 100%;
+    font-size: 1.2em;
+    margin-top: 3px;
+    margin-bottom: 15px;
+}
+
+.btn{
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao{
+    background-color: var(--rox2);
+    color: var(--cin);
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 0;
+    min-width: 30%;
+    min-height: 50px;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+#logar:hover{
+    background-color: var(--cin);
+    color: var(--rox);
+    cursor: pointer;
+}
+
+#login{
+    background-color: var(--cin);
+    color: var(--rox);
+    font-size: 1em;
+}
+
+#login:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+#crie{
+    text-align: center;
+    margin-top: 10%;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+#aqui{
+    text-align: center;
+    padding: 5px;
+    background-color: var(--cin);
+    color: var(--rox);
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+footer{
+    height: 15vh;
+}
+
+footer>p{
+    margin-top: 10%;
+    text-align: center;
+}
+
+.negr{
+    font-weight: 600;
+}
+
+
